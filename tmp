@@ -18,3 +18,6 @@ http://vip.51pdf.com.cn/DownLoad/DownLoad.aspx?rnd=170322142949827
 
 
 curl --cookie "okstockuserid=FE99119A03CABB28; okstockmail=fksundongfeng@126.com; okstockvipendtime=080D461894EAA778A321A47120195F93F0F5DA7BBB187247; okstockusertype=0" http://vip.51pdf.com.cn/DownLoad/DownLoad.aspx\?rnd\=170322142949827 -o test.pdf
+
+http://www.51pdf.com.cn/softweb/demo/layout1.html
+http://www.51pdf.com.cn/report_cb/
