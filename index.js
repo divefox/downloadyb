@@ -48,7 +48,7 @@ j.setCookie(cookie, baseUrl);
 //   }
 // };
 var fileUrl = 'http://vip.51pdf.com.cn/DownLoad/DownLoad.aspx?rnd=';
-var rnd = '170421233331411';
+var rnd = '170423210319662';//'170421233331411';
 
 function postData(type){
   request.post({url: baseUrl+TYPE[type]}, function optionalCallback(err, httpResponse, body) {
@@ -58,35 +58,38 @@ function postData(type){
     console.log('type',type, body);
   });
 };
+// okstockuserid=FE99119A03CABB28; okstockmail=fksundongfeng@126.com; okstockvipendtime=080D461894EAA778A321A47120195F93F0F5DA7BBB187247; okstockusertype=0; ASPSESSIONIDCSABDDRB=EBKJAEFCDGNANOBFFMMKBLAN
 function getFile(rnd, name, filetype){
-  var curl = `curl --cookie "okstockuserid=FE99119A03CABB28; okstockmail=fksundongfeng@126.com; okstockvipendtime=080D461894EAA778A321A47120195F93F0F5DA7BBB187247; okstockusertype=0" http://vip.51pdf.com.cn/DownLoad/DownLoad.aspx\?rnd\=${rnd} -o ${name}.${filetype}`;
-  child_process.exec(curl, function(err, stdout, stderr){
-    console.log(err);
-  });
-
-  return;
-  // request
-  // .get({
-  //   'url': fileUrl+rnd,
-  //   // 'encoding': 'utf-8',
-  //   // 'headers':{
-  //   //   'Accept': 'Accept: */*',
-  //   //   'User-Agent':'UtilMind HTTPGet',
-  //   //   'Cache-Control': 'no-cache'
-  //   // }
-  // }, function (error, response, body) {
-  //     // body is the decompressed response body
-  //     console.log('server encoded the data as: ' + (response.headers['content-encoding'] || 'identity'))
-  //     console.log('the decoded data is: ' + body)
-  //   })
-  // .on('error', function(err) {
-  //   console.log(err)
-  // })
-  // // .on('data', function(data){
-  // //   console.log(data.toString());
-  // // });
-  // .pipe(fs.createWriteStream('test1.pdf'))
+  // var curl = `curl --cookie "okstockuserid=FE99119A03CABB28; okstockmail=fksundongfeng@126.com; okstockvipendtime=080D461894EAA778A321A47120195F93F0F5DA7BBB187247; okstockusertype=0; ASPSESSIONIDCSABDDRB=EBKJAEFCDGNANOBFFMMKBLAN" http://vip.51pdf.com.cn/DownLoad/DownLoad.aspx\?rnd\=${rnd} -o ${name}.${filetype}`;
+  // console.log(curl);
+  // child_process.exec(curl, function(err, stdout, stderr){
+  //   console.log(err);
+  //   console.log(stdout);
+  // });
+  //
+  // return;
+  request
+  .get({
+    'url': fileUrl+rnd,
+    'encoding': 'utf-8',
+    'headers':{
+      'Accept': 'Accept: */*',
+      'User-Agent':'UtilMind HTTPGet',
+      'Cache-Control': 'no-cache'
+    }
+  }, function (error, response, body) {
+      // body is the decompressed response body
+      console.log('server encoded the data as: ' + (response.headers['content-encoding'] || 'identity'))
+      console.log('the decoded data is: ' + body)
+    })
+  .on('error', function(err) {
+    console.log(err)
+  })
+  // .on('data', function(data){
+  //   console.log(data.toString());
+  // });
+  .pipe(fs.createWriteStream('test1.pdf'))
 }
 // postData('qs');
 // postData('hy');
-// getFile(rnd);
+getFile(rnd, 'test', 'pdf');
