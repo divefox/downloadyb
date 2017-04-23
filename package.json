@@ -1,0 +1,26 @@
+{
+  "name": "yanbao",
+  "version": "1.0.0",
+  "description": "yanbao",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divefox/downloadyb.git"
+  },
+  "keywords": [
+    "yanbao"
+  ],
+  "author": "divefox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divefox/downloadyb/issues"
+  },
+  "homepage": "https://github.com/divefox/downloadyb#readme"
+}

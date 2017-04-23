@@ -1,0 +1,20 @@
+GET /User/GetUserDownNum.asp?rnd=725693 HTTP/1.1
+Accept: Accept: */*
+User-Agent: UtilMind HTTPGet
+Host: www.51pdf.com.cn
+Cache-Control: no-cache
+Cookie: okstockuserid=FE99119A03CABB28; okstockmail=fksundongfeng@126.com; okstockvipendtime=080D461894EAA778A321A47120195F93F0F5DA7BBB187247; okstockusertype=0
+
+
+GET /DownLoad/DownLoad.aspx?rnd=170423154923232 HTTP/1.1
+Accept: Accept: */*
+User-Agent: UtilMind HTTPGet
+Host: vip.51pdf.com.cn
+Cache-Control: no-cache
+Cookie: okstockuserid=FE99119A03CABB28; okstockmail=fksundongfeng@126.com; okstockvipendtime=080D461894EAA778A321A47120195F93F0F5DA7BBB187247; okstockusertype=0
+
+
+http://vip.51pdf.com.cn/DownLoad/DownLoad.aspx?rnd=170322142949827
+
+
+curl --cookie "okstockuserid=FE99119A03CABB28; okstockmail=fksundongfeng@126.com; okstockvipendtime=080D461894EAA778A321A47120195F93F0F5DA7BBB187247; okstockusertype=0" http://vip.51pdf.com.cn/DownLoad/DownLoad.aspx\?rnd\=170322142949827 -o test.pdf
